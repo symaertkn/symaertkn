@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Şeyma Nur Ertekin</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #fafafa;
+      color: #222;
+      display: flex;
+      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
+      gap: 1.5rem;
+      flex-direction: row;
+    }
+    a {
+      color: #2a6b4f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #195434;
+    }
+    nav {
+      width: 220px;
+      background: #f0f4f1;
+      border-right: 1px solid #c4d0c9;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 0.5rem;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    nav button {
+      background: none;
+      border: none;
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      text-align: left;
+      cursor: pointer;
+      border-left: 4px solid transparent;
+      color: #556b5a;
+      transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+      border-radius: 3px;
+    }
+    nav button.active {
+      border-left-color: #2a6b4f;
+      color: #2a6b4f;
+      font-weight: 700;
+      background-color: #d7e6da;
+    }
+    nav button:hover:not(.active) {
+      background-color: #e7f0e8;
+    }
+    main {
+      flex-grow: 1;
+      padding: 2rem 2.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+    header h1 {
+      margin: 0 0 0.25rem 0;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2a6b4f;
+    }
+    header h2 {
+      margin: 0;
+      font-weight: 400;
+      color: #556b5a;
+      font-size: 1.1rem;
+    }
+    .content-wrapper { flex-grow: 1; overflow-y: auto; }
+    section { display: none; padding-bottom: 2rem; }
+    section.active { display: block; }
+    h3.subsection {
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: #556b5a;
+      font-weight: 600;
+    }
+    .contact-links p { margin: 0.5rem 0; }
+    @media (max-width: 768px) {
+      body { flex-direction: column; height: auto; }
+      nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #c4d0c9;
+        padding: 0.5rem;
+        gap: 0.5rem;
+      }
+      nav button {
+        flex: 1 1 auto;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        text-align: center;
+        font-size: 0.95rem;
+        padding: 0.6rem;
+      }
+      nav button.active {
+        border-bottom: 3px solid #2a6b4f;
+      }
+      main { padding: 1.5rem; height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav role="tablist" aria-label="Main navigation" id="main-nav">
+    <button class="active" role="tab" aria-selected="true" aria-controls="home" id="tab-home">Home</button>
+    <button role="tab" aria-selected="false" aria-controls="research" id="tab-research">Research & Teaching</button>
+    <button role="tab" aria-selected="false" aria-controls="publications" id="tab-publications">Publications</button>
+    <button role="tab" aria-selected="false" aria-controls="blog" id="tab-blog">Blog</button>
+    <button role="tab" aria-selected="false" aria-controls="contact" id="tab-contact">Contact</button>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Şeyma Nur Ertekin</h1>
+      <h2>PhD Candidate, Psychological Methods<br>University of Amsterdam</h2>
+    </header>
+
+    <div class="content-wrapper">
+      <section id="home" class="active">
+        <h3>About Me</h3>
+        <p>
+          I am a Ph.D. candidate focused on developing computational models of child cognition,
+          such as working memory in an adaptive online learning environment, employing a Bayesian approach.
+          I am affiliated with the <strong>EdAptiv Lab</strong> and the <strong>Amsterdam Mathematical Psychology Lab (AMPL)</strong>
+          within the Psychological Methods Group.
+        </p>
+      </section>
+
+      <section id="research">
+        <h3>Research</h3>
+        <p>
+          My research lies at the intersection of cognitive development, educational technology, and statistical modeling.
+          I investigate how children learn and think, with a particular focus on combining theories of (mathematical) cognition
+          with Bayesian computational models and large-scale behavioral data. Using data from Prowise Learn, an adaptive online
+          learning platform used by Dutch primary schools, I explore how cognitive skills can inform
+          and improve adaptive learning systems. My work aims to bridge empirical psychology with modern statistical tools to better
+          understand and support learning processes in children.
+        </p>
+        <p>
+          Currently, I lead two projects that reflect this goal. The first centers on working memory, where I examine how performance
+          on serial recall tasks develops across childhood. The second project focuses on clock reading, a cognitively demanding skill
+          that draws on time perception, language, math, and memory. Both projects aim to contribute to theoretical understanding while offering
+          insights that can improve adaptive educational technologies.
+        </p>
+
+        <h3 class="subsection">Courses Taught</h3>
+        <ul>
+          <li>2023–2024: Programming in Psychological Science, Supervision of Bachelor's Projects</li>
+          <li>2024–2025: Programming in Psychological Science</li>
+        </ul>
+      </section>
+
+      <section id="publications">
+        <h3>Publications</h3>
+        <p>
+          Ertekin, Ş. N., Hofman, A. D., van der Maas, H., Matzke, D., Streitberger, C., & Haaf, J. M. (2025). 
+          <i>Extending empirical benchmarks of working memory to children: Insights from an adaptive learning environment</i>. 
+          <strong>Developmental Psychology</strong>. 
+          <a href="https://doi.org/10.1037/dev0001992">https://doi.org/10.1037/dev0001992</a>
+        </p>
+        <p>
+          Acarturk, C., & Ertekin, S. (2024). 
+          <i>Spatial Term Variety Reflected in Eye Movements on Visual Scenes</i>. 
+          In <strong>Proceedings of the Annual Meeting of the Cognitive Science Society, 46</strong>. 
+          <a href="https://escholarship.org/uc/item/71v0m351">https://escholarship.org/uc/item/71v0m351</a>
+        </p>
+        <p>
+          Ertekin, Ş. N. (2021). <i>An investigation of Turkish static spatial semantics in terms of lexical variety: an eye tracking study</i> (Master's thesis, Middle East Technical University).
+        </p>
+        <h3 class="subsection">Posters</h3>
+<ul>
+  <li>
+    Ertekin, Ş. N., Ye, L., Hofman, A. D., & Haaf, J. M. (2024, November 21–24).
+    <i>Playing with Cognition: Investigating How Children Learn to Tell Time Within a Large-Scale Online Learning Environment</i>.
+    Poster presented at the <strong>Psychonomic Society 65th Annual Meeting</strong>, New York City.
+  </li>
+  <li>
+    Ertekin, Ş. N., Hofman, A. D., & Haaf, J. M.
+    <i>Extending Working Memory Benchmarks to Children Using a Large-Scale Online Adaptive Learning Environment</i>.
+    Poster available via <a href="https://mathpsych.org/presentation/1684" target="_blank">mathpsych.org</a>.
+  </li>
+  <li>
+    Ertekin, Ş. N., Hofman, A. D., & Haaf, J. M. (2024, June 25–27).
+    <i>Playing with Memory: Benchmarks in Children's Working Memory within a Large-Scale Online Learning Environment</i>.
+    Poster presented at the <strong>International Conference on Working Memory (ICWM)</strong>, Leeds, UK.
+  </li>
+  <li>
+    Ertekin, Ş. N., Hofman, A. D., & Haaf, J. M. (2023, July).
+    <i>Playing with Memory: Working Memory Development in Primary School</i>.
+    Poster presented at <strong>MathPsych/ICCM/EMPG 2023</strong>. 
+    Abstract available via <a href="https://mathpsych.org/presentation/1133" target="_blank">mathpsych.org</a>.
+  </li>
+  <li>
+    Yilmaz, F., Amrani El Yaakoubi, N., Ertekin, Ş. N., Kotoyants, N., Wodeyar, A., & Keogh, C. (2022, July 9–13).
+    <i>Investigating Neural Signatures of Working Memory in Frontoparietal Electrocorticography</i>.
+    Poster presented at the <strong>FENS Forum</strong>, Paris, France.
+  </li>
+  <li>
+    Ertekin, Ş. N., & Acartürk, C. (2021, September 7–8).
+    <i>Türkçede Statik Uzamsal Dil Semantiğinin Kelime Çeşitliliği Açısından İncelenmesi: Bir Göz Hareketleri Takip Çalışması</i>.
+    Poster presented at the <strong>Experimental-Cognitive Psychology Symposium</strong>, Ankara, Turkey.
+    <a href="https://web4.bilkent.edu.tr/deneyselbilissel2021/" target="_blank">[link]</a>
+  </li>
+</ul>
+
+      </section>
+
+      <section id="blog" role="tabpanel" aria-labelledby="tab-blog" tabindex="0">
+  <h3>Blog</h3>
+
+  <article>
+    <h4>Woerden Writing Retreat (July 7–11, 2025)</h4>
+    <p>
+      We spent a few days in the quiet town of Woerden for a collaborative writing retreat — and it was such a refreshing and productive experience! 
+      The time away from the city helped us focus, plan, and make real progress on our ongoing research projects. 
+      Beyond the writing, we also had great conversations, long walks, and cozy coffee breaks.
+    </p>
+    <p>Here's a small glimpse from the retreat:</p>
+    <img src="x.jpeg" style="width: 400px; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <img src="y.jpeg" style="width: 400px; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <img src="z.jpeg" style="width: 400px; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+
+</section>
+
+
+      <section id="contact">
+        <h3>Contact</h3>
+        <div class="contact-links">
+          <p>Email:<br /><a href="mailto:s.n.ertekin@uva.nl">s.n.ertekin@uva.nl</a></p>
+          <p><a href="https://www.linkedin.com/in/%C5%9feyma-nur-ertekin-428021141/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <p><a href="https://www.edaptiv.org/" target="_blank" rel="noopener noreferrer">EdAptive Lab</a></p>
+          <p><a href="https://www.ampl-psych.com/" target="_blank" rel="noopener noreferrer">AMPL Lab</a></p>
+          <p><strong>Office Address:</strong><br>Nieuwe Achtergracht 129-B, 1018 WS Amsterdam, Room GS.13</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const tabs = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('main section');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        sections.forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById(tab.getAttribute('aria-controls')).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
